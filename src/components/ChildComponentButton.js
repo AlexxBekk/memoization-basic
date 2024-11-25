@@ -1,8 +1,12 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
-function SecondChildComponent({ onClick }) {
-  //Вставь тут счетчик рендеров на основе useRef
-  
+function ChildComponentButton({ onClick }) {
+  const renderCount = useRef(0);
+
+  useEffect(() => {
+    renderCount.current++;
+  });
+
   return (
     <div>
       <h2>Second Child Component</h2>
@@ -12,4 +16,4 @@ function SecondChildComponent({ onClick }) {
   );
 }
 
-export default React.memo(SecondChildComponent);
+export default React.memo(ChildComponentButton);
