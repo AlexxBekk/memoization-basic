@@ -4,7 +4,7 @@ function ChildComponentButton({ onClick }) {
   const renderCount = useRef(0);
 
   useEffect(() => {
-    renderCount.current++;
+    renderCount.current += 1;
   });
 
   return (

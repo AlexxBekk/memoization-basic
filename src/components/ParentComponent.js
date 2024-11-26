@@ -20,8 +20,9 @@ function ParentComponent() {
   который запоминает результат вычислений между рендерингами
   и рендерит ребенка при seconds кратным трем */
 
-  const dividedByThree = useMemo(() => {
-    return Math.floor(seconds / 3);
+  const dividedByThree = Math.floor(seconds / 3);
+  const data = useMemo(() => {
+    return dividedByThree;
   }, [seconds]);
 
   /* для оптимизации обработчика кликов для кнопки используется useCallback,
@@ -36,7 +37,7 @@ function ParentComponent() {
     <div>
       <h1>Parent Component</h1>
       <p>Seconds: {seconds}</p>
-      <ChildComponentText dividedByThree={dividedByThree} />
+      <ChildComponentText data={data} />
       <ChildComponentButton onClick={handleClick} />
     </div>
   );

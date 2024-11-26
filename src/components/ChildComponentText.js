@@ -1,17 +1,17 @@
 import React, { useRef, useEffect } from "react";
 
-function ChildComponentText({ dividedByThree }) {
+function ChildComponentText({ data }) {
   const renderCount = useRef(0);
 
   useEffect(() => {
-    renderCount.current++;
+    renderCount.current += 1;
   });
 
   return (
     <div>
       <h2>Child Component</h2>
       <p>Renders: {renderCount.current}</p>
-      <p>Divided by Three: {dividedByThree}</p>
+      <p>Divided by Three: {data}</p>
     </div>
   );
 }
