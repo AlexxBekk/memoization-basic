@@ -21,9 +21,7 @@ function ParentComponent() {
   и рендерит ребенка при seconds кратным трем */
 
   const dividedByThree = Math.floor(seconds / 3);
-  const data = useMemo(() => {
-    return dividedByThree;
-  }, [seconds]);
+  const data = useMemo(() => ({ dividedByThree }), [seconds]);
 
   /* для оптимизации обработчика кликов для кнопки используется useCallback,
    который сохраняет функцию между рендерами,
